@@ -1,2 +1,1 @@
-# ansible-config-mgt
-* Testing ansible build project
+# ansible-config-mgt.
