@@ -91,8 +91,8 @@ nginx_upstreams:
   strategy: "ip_hash"
   keepalive: 16
   servers:
-    - "172.31.85.152 weight=5"
-    - "172.31.86.47 weight=5"
+    - "172.31.84.177 weight=5"
+    - "172.31.81.75 weight=5"
 
 nginx_log_format: |-
   '$remote_addr - $remote_user [$time_local] "$request" '
