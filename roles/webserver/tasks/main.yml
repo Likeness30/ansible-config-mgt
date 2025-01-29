@@ -27,6 +27,8 @@
   become_user: root
   ansible.builtin.command:
    cmd: sudo dnf install dnf-utils http://rpms.remirepo.net/enterprise/remi-release-9.rpm -y
+  async: 600 
+  poll: 0 
    #cmd: sudo dnf install -y dnf-utils && sudo rpm -ivh http://rpms.remirepo.net/enterprise/remi-release-9.rpm
 
 

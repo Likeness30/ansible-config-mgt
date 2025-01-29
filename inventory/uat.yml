@@ -2,8 +2,8 @@
 load_balancer ansible_host=172.31.94.81 ansible_ssh_user='ubuntu'
 
 [uat_webservers]
-Web1 ansible_host=172.31.80.115 ansible_ssh_user='ec2-user'
-Web2 ansible_host=172.31.92.117 ansible_ssh_user='ec2-user'
+Web1 ansible_host=172.31.82.52 ansible_ssh_user='ec2-user'
+Web2 ansible_host=172.31.88.34 ansible_ssh_user='ec2-user'
 
 [db]
 db ansible_host=172.31.86.101 ansible_ssh_user='ubuntu'
