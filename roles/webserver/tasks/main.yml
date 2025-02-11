@@ -38,6 +38,8 @@
   become_user: root
   ansible.builtin.command:
     cmd: sudo dnf module reset php -y
+  async: 600 
+  poll: 0 
 
 - name: Enable PHP 8.2 module
   remote_user: ec2-user
@@ -45,6 +47,8 @@
   become_user: root
   ansible.builtin.command:
     cmd: sudo dnf module enable php:remi-8.2 -y
+  async: 600 
+  poll: 0 
 
 - name: Install PHP and extensions
   remote_user: ec2-user
@@ -58,6 +62,8 @@
       - php-curl
       - php-mysqlnd
     state: present
+  async: 600 
+  poll: 0 
 
 - name: Install MySQL client
   remote_user: ec2-user
@@ -66,6 +72,8 @@
   ansible.builtin.yum:
     name: "mysql"
     state: present
+  async: 600 
+  poll: 0
 
 - name: Start PHP-FPM service
   remote_user: ec2-user
@@ -74,6 +82,8 @@
   ansible.builtin.service:
     name: php-fpm
     state: started
+  async: 600 
+  poll: 0 
 
 - name: Enable PHP-FPM service
   remote_user: ec2-user
@@ -82,6 +92,8 @@
   ansible.builtin.service:
     name: php-fpm
     enabled: true
+  async: 600 
+  poll: 0 
 
 - name: Set SELinux policies for web servers
   remote_user: ec2-user
@@ -91,6 +103,8 @@
     cmd: sudo setsebool -P httpd_execmem 1
     cmd: sudo setsebool -P httpd_can_network_connect=1
     cmd: sudo setsebool -P httpd_can_network_connect_db=1
+  async: 600 
+  poll: 0 
 
 - name: install git
   remote_user: ec2-user
@@ -99,6 +113,8 @@
   ansible.builtin.yum:
     name: "git"
     state: present
+  async: 600 
+  poll: 0 
 
 - name: clone a repo
   remote_user: ec2-user
